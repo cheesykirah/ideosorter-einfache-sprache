@@ -270,6 +270,9 @@ async function r(p, ideology) {
     show("results")
     screenshot.scrollIntoView({ behavior: "auto" })
 }
+
+// PRO-PRIVATE PROPERTY TREE
+
 function q_privateProperty() {
     q("", "Should private property exist?", "Yes", q_constitution, "No", q_markets)
 }
@@ -414,6 +417,9 @@ function q_electMon() {
 function q_weak() {
     q(q_sovereignType, "Should the weak be subjugated?", "Yes", () => r(q_weak, "Kraterocracy"), "No", () => r(q_weak, "Combatocracy"))
 }
+
+// ANTI-PRIVATE PROPERTY TREE
+
 function q_markets() {
     q(q_privateProperty, "Should goods be distributed through markets?", "Yes", q_authMarkSoc, "No", q_communism)
 }
@@ -439,19 +445,19 @@ function q_commieState() {
     q(q_communism, "Is a transitory state required for this?", "Yes", q_demCent, "No", q_communization)
 }
 function q_demCent() {
-    q(q_commieState, "Should proletarian organization be based on democratic centralism?", "Yes", q_oneCountrySoc, "No", q_party)
+    q(q_commieState, "Should proletarian organization be based on democratic centralism?", "Yes", q_stalinCope, "No", q_party)
 }
-function q_oneCountrySoc() {
-    q(q_demCent, "Is socialism possible in a single country?", "Yes", q_socCommodity, "No", q_polDemocracy)
+function q_stalinCope() {
+    q(q_demCent, "Can socialism be built up in one country?", "Yes", q_socCommodity, "No", q_natLib)
 }
-function q_polDemocracy() {
-    q(q_oneCountrySoc, "Is socialism only complete when it is accompanied by political democracy?", "Yes", q_dws, "No", () => r(q_polDemocracy, "Leninism"))
+function q_natLib() {
+    q(q_stalinCope, "Do you support national liberation in contemporary society?", "Yes", q_dws, "No", () => r(q_natLib, "Italian left-communism (damen)"))
 }
 function q_dws() {
-    q(q_polDemocracy, "Do you subscribe to the theory of the degenerated workers state?", "Yes", () => r(q_dws, "Orthodox trotskyism"), "No", () => r(q_dws, "Heterodox trotskyism"))
+    q(q_natLib, "Do you subscribe to the theory of the degenerated workers state?", "Yes", () => r(q_dws, "Orthodox trotskyism"), "No", () => r(q_dws, "Heterodox trotskyism"))
 }
 function q_socCommodity() {
-    q(q_oneCountrySoc, "Should commodity production occur under socialism?", "Yes", q_peopleWar, "No", () => r(q_socCommodity, "Bukharinism"))
+    q(q_stalinCope, "Will commodity production occur under socialism?", "Yes", q_peopleWar, "No", () => r(q_socCommodity, "Bukharinism"))
 }
 function q_peopleWar() {
     q(q_socCommodity, "Should protracted guerrilla warfare be used to remove the old society?", "Yes", q_universalPPW, "No", q_natCom)
@@ -484,10 +490,7 @@ function q_reform() {
     q(q_parliament, "Should we reform capitalism on the short term?", "Yes", () => r(q_reform, "Classical social democracy"), "No", () => r(q_reform, "De leonism"))
 }
 function q_partyDict() {
-    q(q_parliament, "Will the dictatorship of the proletariat be a party dictatorship?", "Yes", q_invariance, "No", () => r(q_partyDict, "Council communism (pro-party)"))
-}
-function q_invariance() {
-    q(q_partyDict, "Is Marxism invariant?", "Yes", () => r(q_invariance, "Italian left-communism (bordiga)"), "No", () => r(q_invariance, "Italian left-communism (damen)"))
+    q(q_parliament, "Is the proletarian dictatorship a party dictatorship?", "Yes", () => r(q_partyDict, "Italian left-communism (bordiga)"), "No", () => r(q_partyDict, "Council communism (pro-party)"))
 }
 function q_nature() {
     q(q_communization, "Is an exit back in nature the only way to escape capitalism?", "Yes", () => r(q_nature, "Camattism"), "No", () => r(q_nature, "Communization"))
