@@ -451,7 +451,7 @@ function q_stalinCope() {
     q(q_demCent, "Can socialism be built up in one country?", "Yes", q_socCommodity, "No", q_natLib)
 }
 function q_natLib() {
-    q(q_stalinCope, "Do you support national liberation in contemporary society?", "Yes", q_dws, "No", () => r(q_natLib, "Italian left-communism (damen)"))
+    q(q_stalinCope, "Do you support national liberation in contemporary society?", "Yes", q_dws, "No", () => r(q_natLib, "Italian left-communism (battaglia)"))
 }
 function q_dws() {
     q(q_natLib, "Do you subscribe to the theory of the degenerated workers state?", "Yes", () => r(q_dws, "Orthodox trotskyism"), "No", () => r(q_dws, "Heterodox trotskyism"))
@@ -490,7 +490,7 @@ function q_reform() {
     q(q_parliament, "Should we reform capitalism on the short term?", "Yes", () => r(q_reform, "Classical social democracy"), "No", () => r(q_reform, "De leonism"))
 }
 function q_partyDict() {
-    q(q_parliament, "Is the proletarian dictatorship a party dictatorship?", "Yes", () => r(q_partyDict, "Italian left-communism (bordiga)"), "No", () => r(q_partyDict, "Council communism (pro-party-form)"))
+    q(q_parliament, "Is the proletarian dictatorship a party dictatorship?", "Yes", () => r(q_partyDict, "Italian left-communism (programma)"), "No", () => r(q_partyDict, "Council communism (pro-party-form)"))
 }
 function q_nature() {
     q(q_communization, "Is an exit back in nature the only way to escape capitalism?", "Yes", () => r(q_nature, "Camattism"), "No", () => r(q_nature, "Communization"))
