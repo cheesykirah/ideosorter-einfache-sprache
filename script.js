@@ -442,10 +442,13 @@ function q_communism() {
     q(q_markets, "Should we reach a classless, stateless, moneyless society?", "Yes", q_commieState, "No", q_weed)
 }
 function q_commieState() {
-    q(q_communism, "Is a transitory state required for this?", "Yes", q_demCent, "No", q_communization)
+    q(q_communism, "Is a temporary state apparatus necessary for this?", "Yes", q_party, "No", q_communization)
+}
+function q_party() {
+    q(q_commieState, "Should the proletariat organize into a political party?", "Yes", q_demCent, "No", q_commodity)
 }
 function q_demCent() {
-    q(q_commieState, "Should proletarian organization be based on democratic centralism?", "Yes", q_stalinCope, "No", q_party)
+    q(q_party, "Should proletarian organization be based on democratic centralism?", "Yes", q_stalinCope, "No", q_parliament)
 }
 function q_stalinCope() {
     q(q_demCent, "Can socialism be built up in one country?", "Yes", q_socCommodity, "No", q_natLib)
@@ -480,29 +483,26 @@ function q_chinaBourgeois() {
 function q_songun() {
     q(q_natCom, "Is giving resource precedence to the military necessary?", "Yes", () => r(q_songun, "Juche"), "No", () => r(q_songun, "National communism"))
 }
-function q_party() {
-    q(q_demCent, "Should the proletariat organize into a political party?", "Yes", q_parliament, "No", q_commodity)
-}
 function q_parliament() {
-    q(q_party, "Should communists participate in parliamentary politics?", "Yes", q_reform, "No", q_partyDict)
+    q(q_demCent, "Should communists participate in parliamentary politics?", "Yes", q_reform, "No", q_partyDict)
 }
 function q_reform() {
     q(q_parliament, "Should we reform capitalism on the short term?", "Yes", () => r(q_reform, "Classical social democracy"), "No", () => r(q_reform, "De leonism"))
 }
 function q_partyDict() {
-    q(q_parliament, "Is the proletarian dictatorship a party dictatorship?", "Yes", () => r(q_partyDict, "Italian left-communism (programma)"), "No", () => r(q_partyDict, "Council communism (pro-party-form)"))
+    q(q_parliament, "Is the proletarian dictatorship a party dictatorship?", "Yes", () => r(q_partyDict, "Italian left-communism (programma)"), "No", q_partyElites)
+}
+function q_partyElites() {
+    q(q_partyDict, "Should there be a small party of elites to engage in political activity?", "Yes", () => r(q_partyElites, "Council communism (organizational dualism)"), "No", () => r(q_partyElites, "Council communism (organizational unitarism)"))
 }
 function q_nature() {
     q(q_communization, "Is an exit back in nature the only way to escape capitalism?", "Yes", () => r(q_nature, "Camattism"), "No", () => r(q_nature, "Communization"))
 }
 function q_commodity() {
-    q(q_party, "Should proletarian revolution be that of everyday life?", "Yes", () => r(q_commodity, "Situationism"), "No", q_dotp)
-}
-function q_dotp() {
-    q(q_commodity, "Should there be a dictatorship of the proletariat?", "Yes", () => r(q_dotp, "Council communism (anti-party-form)"), "No", () => r(q_dotp, "Libertarian marxism"))
+    q(q_party, "Should proletarian revolution be that of everyday life?", "Yes", () => r(q_commodity, "Situationism"), "No", () => r(q_commodity, "Libertarian marxism"))
 }
 function q_communization() {
-    q(q_commieState, "Should capitalist relations be socialized through armed insurrection?", "Yes", q_nature, "No", q_vouchers)
+    q(q_commieState, "Is it the immediate task of the proletariat to communize social relations during the revolution?", "Yes", q_nature, "No", q_vouchers)
 }
 function q_vouchers() {
     q(q_communization, "Should labor vouchers be given in exchange for work?", "Yes", () => r(q_vouchers, "Anarcho-collectivism"), "No", q_agriculture)
