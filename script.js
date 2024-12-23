@@ -502,7 +502,7 @@ function q_commodity() {
     q(q_party, "Should proletarian revolution be that of everyday life?", "Yes", () => r(q_commodity, "Situationism"), "No", () => r(q_commodity, "Libertarian marxism"))
 }
 function q_communization() {
-    q(q_commieState, "Is it the immediate task of the proletariat to communize social relations during the revolution?", "Yes", q_nature, "No", q_vouchers)
+    q(q_commieState, "The revolution does not have communism as a project and result, but as its very content", "Yes", q_nature, "No", q_vouchers)
 }
 function q_vouchers() {
     q(q_communization, "Should labor vouchers be given in exchange for work?", "Yes", () => r(q_vouchers, "Anarcho-collectivism"), "No", q_agriculture)
