@@ -1055,7 +1055,7 @@ function q_peopleWar() {
 function q_universalPPW() {
   q(
     q_peopleWar,
-    "Funktionieren diese Taktiken innn allen Ländern?",
+    "Funktionieren diese Taktiken in allen Ländern?",
     "Ja",
     () => r(q_universalPPW, "Marxism-leninism-maoism, principally maoism"),
     "Nein",
