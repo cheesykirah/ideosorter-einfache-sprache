@@ -320,7 +320,7 @@ async function r(p, ideology) {
 function q_privateProperty() {
   q(
     "",
-    "Sollte Privateigentum existieren? (Sollten Personen und Konzerne Produktionsmittel, Ideen und Ressourcen alleine besitzen und verwalten dürfen?)",
+    "Sollte Privateigentum existieren? (Sollten Personen und Konzerne Produktionsmittel, Ideen und Ressourcen alleine besitzen und verwalten dürfen und Entscheidungen trefen dürfen, egal wie schlecht diese für die weite Bevölkerung sind?)",
     "Ja",
     q_constitution,
     "Nein",
